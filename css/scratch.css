@@ -1,0 +1,31 @@
+body {
+    background-color: #e6f7e6; /* soothing but also a little ugly */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: darkgreen;
+  }
+  
+  .header {
+    background-color: hotpink;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .main-content {
+    margin: 20px;
+    border: 5px dashed orange;
+    padding: 10px;
+  }
+  
+  .section2 {
+    background-color: #ccc;
+    padding: 15px;
+    margin-top: 40px;
+    border: 2px solid black;
+  }
+  
+  .tableau-embed {
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    padding: 20px;
+    color: purple;
+  }
+  

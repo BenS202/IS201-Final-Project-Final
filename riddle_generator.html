@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Riddle Generator</title>
+  <script>
+    const riddles = [
+      { question: "What has keys but can’t open locks?", answer: "A piano." },
+      { question: "What comes once in a minute, twice in a moment, but never in a thousand years?", answer: "The letter 'M'." },
+      { question: "I’m light as a feather, yet the strongest person can’t hold me for more than five minutes. What am I?", answer: "Your breath." },
+      { question: "What can travel around the world while staying in the same corner?", answer: "A stamp." },
+      { question: "What gets bigger the more you take away from it?", answer: "A hole." }
+    ];
+  
+    let currentRiddle = null;
+  
+    function getRiddle() {
+      const index = Math.floor(Math.random() * riddles.length);
+      currentRiddle = riddles[index];
+      document.getElementById("riddle").textContent = currentRiddle.question;
+      document.getElementById("answer").textContent = ""; // clear previous answer
+    }
+  
+    function revealAnswer() {
+      if (currentRiddle) {
+        document.getElementById("answer").textContent = currentRiddle.answer;
+      } else {
+        document.getElementById("answer").textContent = "Click 'Get a Riddle' first!";
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      background: linear-gradient(to right, #f7d9d9, #d9f7f3);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #4b0082;
+    }
+
+    #riddle-box {
+      background-color: #fff3cd;
+      border: 2px dashed #ffa500;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 30px auto;
+      width: 80%;
+      max-width: 500px;
+      min-height: 100px;
+    }
+
+    #answer {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #006400;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background-color: #4b0082;
+      color: white;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #5e00a3;
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+
+    a {
+      color: #4b0082;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>Riddle Generator</h1>
+    <div id="riddle-box">
+        <p id="riddle">Click the button to get a riddle!</p>
+        <p id="answer"></p>
+    </div>
+    <button onclick="getRiddle()">Get a Riddle</button>
+    <button onclick="revealAnswer()">Reveal Answer</button>
+    
+    <footer>
+        <p>&copy; 2023 Riddle Generator. All rights reserved.</p>
+        <a href="index.html">Back to resume</a>
+    </footer>
